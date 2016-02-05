@@ -1,8 +1,9 @@
 var proxyEnabled = false;
 
 chrome.runtime.onMessage.addListener(function(request, sender, callback) {
-    proxyEnabled = request.proxyEnabled;
-
+    if (request.type === 'enableProxy') {
+    	proxyEnabled = !proxyEnabled;
+    }
 });
 
 chrome.webRequest.onBeforeRequest.addListener(function (details) {
@@ -12,5 +13,5 @@ chrome.webRequest.onBeforeRequest.addListener(function (details) {
 	    };
     }
 }, {
-    urls: ["*://*.facebook.com/*"]
+    urls: ["*://*/api/member", "*://*/api/login"]
 }, ["blocking"]);
