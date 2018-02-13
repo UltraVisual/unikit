@@ -9,9 +9,10 @@
 		"default_popup": "popups/popup.html"
 	},
 	"permissions": [
-	"webRequest",
-	"webRequestBlocking",
-		"*://*/*"
+		"webRequest",
+		"webRequestBlocking",
+		"*://*/*",
+		"tabs"
 	],
 	"background": {
 		"scripts": ["background.js"]

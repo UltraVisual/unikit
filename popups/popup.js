@@ -1,5 +1,11 @@
-document.querySelector('button').addEventListener('click', function () {
+document.querySelector('.proxy-button').addEventListener('click', function () {
 	chrome.runtime.sendMessage({
-	   type: 'enableProxy'
+		type: 'enableProxy'
+	});
+});
+
+document.querySelector('.inject-button').addEventListener('click', function () {
+	chrome.runtime.sendMessage({
+		type: 'enableInjection'
 	});
 });
